@@ -1,0 +1,32 @@
+---
+title: "你好，世界：这个博客是怎么搭起来的"
+date: "2026-08-24"
+description: "介绍本博客的技术栈：Next.js App Router、MDX、Tailwind CSS，以及文章是如何被渲染出来的。"
+---
+
+欢迎来到我的博客！这是第一篇文章，顺便介绍一下它的实现方式。
+
+## 技术栈
+
+- **Next.js**：前端页面和服务端渲染一体化
+- **MDX**：用 Markdown 写文章，还能嵌入组件
+- **Tailwind CSS**：快速搞定样式
+- **Vercel**：免费托管，推送代码即自动上线
+
+## 文章是怎么渲染的
+
+每篇文章是 `content/posts` 下的一个 `.mdx` 文件，头部有 frontmatter：
+
+```mdx
+---
+title: "文章标题"
+date: "2026-08-24"
+description: "一句话摘要"
+---
+```
+
+构建时 Next.js 通过文件名生成路由（`/posts/文件名`），读取 frontmatter 展示标题和日期，正文交给 MDX 渲染成 HTML。全程静态生成（SSG），访问速度极快。
+
+## 怎么写新文章
+
+在 `content/posts` 下新建一个 `my-post.mdx`，填好 frontmatter 开始写就行，提交推送后自动发布。
